@@ -15,7 +15,7 @@ const NavBar = () => {
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/create">Create a post</a>
         <a class="nav-link" href="/viewall">View All</a>
-        <a class="nav-link" href="#">View My Post</a>
+        <a class="nav-link" href="/viewmypost">View My Post</a>
         
       </div>
     </div>
