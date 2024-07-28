@@ -17,10 +17,13 @@ const SignUp = () => {
     }
         
     const readValue = () => {
-        console.log(data)
-        axios.post("http://localhost:8080/add",data).then(
+
+       let newInput={"name":data.name, "email":data.email,"password":data.password}
+
+
+        axios.post("http://localhost:8000/signup",data).then(
             (response) => {
-                console.log(response)
+                console.log(response.data)
                 if (response.data.status == "success") {
                     alert("success")
 
@@ -57,7 +60,10 @@ const SignUp = () => {
                         </div>
                         
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                            <button className="btn btn-success" onClick={readValue}>Register</button>
+                            <button className="btn btn-success" onClick={readValue}>SignUp</button>
+                        </div>
+                        <div>
+                            <a href="/signin" className='btn btn-primary'>Back to sign in</a>
                         </div>
                     </div>
 
