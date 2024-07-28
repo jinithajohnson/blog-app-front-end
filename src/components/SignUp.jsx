@@ -26,15 +26,21 @@ const SignUp = () => {
                 console.log(response.data)
                 if (response.data.status == "success") {
                     alert("success")
+                    changeData({"name":"","email":"","password":""})
 
                 }
                 else {
-                    alert("error")
+                    alert("failed")
+                    changeData({"name":"","email":"","password":""})
                 }
             }
         ).catch(
+            (error)=>{
+                console.log(error.message)
+                alert(error.message)
+            }
 
-        )
+        ).finally()
     }
 
 
