@@ -18,7 +18,7 @@ const SignUp = () => {
         
     const readValue = () => {
         console.log(data)
-        axios.post("http://localhost:8080/add",data).then(
+        axios.post("http://localhost:8000/signup",data).then(
             (response) => {
                 console.log(response)
                 if (response.data.status == "success") {
@@ -60,6 +60,7 @@ const SignUp = () => {
                             <button className="btn btn-success" onClick={readValue}>Register</button>
                         </div>
                     </div>
+                    <a href='/signin'>new user click here</a>
 
                 </div>
             </div>
