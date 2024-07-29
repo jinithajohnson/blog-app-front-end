@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
+
+  const navigate=useNavigate()
+
+  const LogOut=()=> {
+    sessionStorage.clear()
+    navigate("/signin")
+  }
   return (
     <div>
             
@@ -16,7 +24,10 @@ const NavBar = () => {
         <a class="nav-link active" aria-current="page" href="/create">Create a post</a>
         <a class="nav-link" href="/viewall">View All</a>
         <a class="nav-link" href="/viewmypost">View My Post</a>
-        
+       
+        <button className="btn btn-danger" onClick={LogOut}>Logout</button>
+
+                        
       </div>
     </div>
   </div>
